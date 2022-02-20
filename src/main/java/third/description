@@ -1,0 +1,64 @@
+Море было пурпурным. Пляж, на котором они стояли, был усыпан мелкой желтой и зеленой галькой,
+судя по всему, это были ужасно драгоценные камешки.
+Вдали мягкой волнистой линией виднелись горы с красными вершинами.
+Рядом с ними стоял пляжный столик из чистого серебра под лиловым солнечным зонтом с оборками и серебряными кистями.
+
+Abstract class Location - описывает место дейcтвий
+    abstract methods:
+        boolean activity implemented by other classes
+    fields:
+        String locationName
+        List<Human>
+        List<Humanoid>
+        List<CrabHumanoid>
+        List<? extends Decoration>
+
+Sea extends Location - море в котором могут быть какие-либо события
+    methods:
+        Override action
+    List<Humanoid>
+    List<CrabHumanoid>
+        если море то всегда война -≥ заключаем мир (всегда false)
+
+Beach extends Location - пляж на котором могут быть какие-либо события
+    methods:
+        Override action
+    List<Human>
+    List<Humanoid>
+        если пляж то в суть метода -≥ заключаем мир (возвращаем логическое значение)
+
+Abstract class Decoration
+
+
+
+Interface Action
+
+Human implements Action
+CrabHumanoid implements Action
+Humanoid implements Action
+
+
+List<? extends Location>
+doWar(? extends Location)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
