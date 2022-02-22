@@ -83,8 +83,17 @@ public class ModelTest {
         beach.setDecorations(decorations);
         assertNotNull(beach.getDecorations());
 
-        sea.setDecorations(decorations);
-        assertNotNull(sea.getDecorations());
+        Table table = (Table) decorations.get(0);
+        assertEquals(table.getName(), "Пляжный столик");
+        assertEquals(table.getMaterial(), "Серебро");
+
+        Umbrella umbrella = (Umbrella) decorations.get(2);
+        assertEquals(umbrella.getName(), "Пляжный зонтик");
+        assertEquals(umbrella.getMaterial(), "Наверное пластик");
+
+        Stone stone = (Stone) decorations.get(1);
+        assertNotEquals(stone.getMaterial(), "Алмаз");
+        assertNotEquals(stone.getName(), "Валун");
     }
 
     @Test

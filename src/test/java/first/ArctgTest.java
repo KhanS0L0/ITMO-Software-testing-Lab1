@@ -7,7 +7,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DisplayName("╯°□°）╯")
@@ -27,6 +27,22 @@ class ArctgTest {
     void tableValuesTest(float expected, float x) {
         double actual = arctg.getResult(x);
         assertEquals(expected, actual, DELTA);
+    }
+
+    @Test
+    void disperseTest(){
+        double actual = arctg.getResult(1.5);
+        assertNotEquals(actual, 0.983);
+        actual = arctg.getResult(-1.5);
+        assertNotEquals(actual, -0.983);
+        actual = arctg.getResult(2);
+        assertNotEquals(actual, 1.107);
+        actual = arctg.getResult(-2);
+        assertNotEquals(actual, -1.107);
+        actual = arctg.getResult(3);
+        assertNotEquals(actual, 1.249);
+        actual = arctg.getResult(-3);
+        assertNotEquals(actual, -1.249);
     }
 
     @Test
